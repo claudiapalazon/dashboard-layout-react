@@ -1,0 +1,73 @@
+@use "../primitives/colors";
+
+.level {
+  padding: 32px 0px;
+  border-bottom: 1px solid colors.$grey-color;
+
+  &-gift {
+    margin-top: 16px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    background: linear-gradient(269.3deg, #1f47a5 5.29%, #64a7fc 94.26%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    transform: translateX(0);
+
+    &-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .fa-trophy:before {
+        color: colors.$white-color;
+        font-size: 24px;
+      }
+    }
+
+    .bronce {
+      background: linear-gradient(327.9deg, #cd7f32 14.35%, #d99d73 85.33%);
+    }
+
+    .plata {
+      background: linear-gradient(327.9deg, #ced0d9 14.35%, #edf0f2 85.33%);
+    }
+
+    .oro {
+      background: linear-gradient(327.9deg, #ffd700 14.35%, #f8e15b 85.33%);
+    }
+
+    .platino {
+      background: linear-gradient(327.9deg, #e5e4e2 14.35%, #f0f0f0 85.33%);
+    }
+
+    &-text {
+      text-align: center;
+
+      &-title,
+      &-number {
+        color: colors.$white-color;
+      }
+    }
+
+    &-next {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .fa-chevron-right:before {
+        color: colors.$white-color;
+        font-size: 14px;
+      }
+    }
+  }
+}

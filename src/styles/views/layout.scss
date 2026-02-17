@@ -1,0 +1,11 @@
+.layout {
+  display: flex;
+  &-menu {
+    width: 248px;
+  }
+  &-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

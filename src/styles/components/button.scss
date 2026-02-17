@@ -1,0 +1,19 @@
+@use "../primitives/colors";
+
+.webel-button {
+  width: 100%;
+  text-align: center;
+  padding: 16px 0px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.type-primary {
+  background-color: colors.$blue-color;
+  color: colors.$white-color;
+}
+.type-secondary {
+  background-color: colors.$white-color;
+  border: 1px solid colors.$black-color;
+}

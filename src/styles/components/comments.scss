@@ -1,0 +1,78 @@
+@use "../primitives/colors";
+
+.comments {
+  border-bottom: 1px solid colors.$grey-color;
+  &-title {
+    padding-bottom: 16px;
+    border-bottom: 1px solid colors.$grey-color;
+  }
+  &-container {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    &-photo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid colors.$grey-color;
+      object-fit: cover;
+    }
+    &-info {
+      &-first {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        &-text,
+        &-text-color {
+          margin: 0px;
+        }
+        &-text-color {
+          color: colors.$grey-blue-color-3;
+        }
+      }
+      .point {
+        padding-bottom: 6px;
+      }
+      &-second {
+        display: flex;
+        align-items: center;
+
+        .small-photo {
+          width: 16px;
+          height: 16px;
+          margin-right: 4px;
+        }
+        &-text {
+          margin: 0px;
+          color: colors.$grey-blue-color-3;
+        }
+      }
+    }
+  }
+  &-describe {
+    background-color: colors.$blue-light-color;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 32px;
+    &-text {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      &-first,
+      &-second {
+        margin: 0px;
+        color: colors.$black-color;
+      }
+      &-second {
+        margin: 0px;
+        margin-top: 24px;
+      }
+    }
+  }
+  .all-reviews-button {
+    width: 100%;
+    padding: 32px 0px;
+    border-top: 1px solid colors.$grey-color;
+  }
+}

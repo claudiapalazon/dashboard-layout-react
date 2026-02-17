@@ -1,0 +1,100 @@
+@use "../primitives/colors";
+
+.services {
+  padding: 32px 0px;
+  border-bottom: 1px solid colors.$grey-color;
+  &-surcharge {
+    width: fit-content;
+    margin-top: 16px;
+    background-color: colors.$grey-blue-color;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    &-icon {
+      width: 12px;
+      margin-right: 8px;
+    }
+  }
+  &-container {
+    margin-top: 24px;
+    padding: 0px 24px;
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0px;
+      cursor: pointer;
+      border-top: 1px solid colors.$grey-blue-color-2;
+    }
+
+    .service-details {
+      padding-left: 40px;
+    }
+    .fa-chevron-right:before,
+    .fa-chevron-down:before {
+      color: colors.$grey-red-color;
+    }
+
+    .type-table {
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr;
+      grid-gap: 10px;
+    }
+
+    .table-header {
+      display: contents;
+      font-weight: bold;
+      background-color: colors.$grey-red-color-2;
+    }
+
+    .type-title-header,
+    .type-price-header,
+    .type-duration-header {
+      text-align: center;
+    }
+
+    .table-row {
+      display: contents;
+    }
+
+    .type-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .type-price,
+    .type-duration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .deatils-button {
+      width: fit-content;
+      margin-top: 2px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0px;
+      .fa-info-circle:before {
+        margin-right: 4px;
+        color: colors.$blue-color;
+      }
+      &-text {
+        color: colors.$blue-color;
+        border-bottom: 0.5px solid colors.$blue-color;
+      }
+    }
+
+    .service-title {
+      display: flex;
+      align-items: center;
+      &-icon {
+        width: 32px;
+        margin-right: 24px;
+      }
+    }
+  }
+}

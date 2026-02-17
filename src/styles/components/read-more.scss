@@ -1,0 +1,38 @@
+@use "../primitives/colors";
+
+.readmore-container {
+  width: 100%;
+  .readmore-content {
+    margin: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+
+  .readmore-content.expanded {
+    max-height: none;
+    -webkit-line-clamp: none;
+    line-clamp: none;
+  }
+
+  .toggle-button {
+    width: fit-content;
+    margin-top: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    &-text {
+      color: colors.$blue-color;
+      border-bottom: 0.5px solid colors.$blue-color;
+    }
+    .fa-minus:before,
+    .fa-plus:before {
+      color: colors.$blue-color;
+      margin-right: 6px;
+    }
+  }
+}

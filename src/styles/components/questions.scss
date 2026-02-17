@@ -1,0 +1,43 @@
+@use "../primitives/colors";
+
+.questions {
+  position: relative;
+  padding-top: 32px;
+  &-title {
+    margin-bottom: 16px;
+    margin-top: 32px;
+  }
+  .fa-check:before {
+    color: colors.$green-color;
+    margin-right: 4px;
+  }
+}
+
+.padding-bottom-questions {
+  padding-bottom: 16px;
+}
+
+.questions-list.expanded .last-item::after {
+  display: none;
+}
+
+.questions-list.expanded {
+  max-height: none;
+  filter: none;
+}
+
+.apply-blur {
+  filter: blur(1px);
+}
+
+.button-container {
+  width: 100%;
+}
+
+.button-container-hidden {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}

@@ -1,0 +1,66 @@
+@use "../primitives/colors";
+
+.ratings {
+  margin-top: 32px;
+  padding: 32px 0px 64px 0px;
+  border-top: 1px solid colors.$grey-color;
+  &-header {
+    display: flex;
+    align-items: center;
+    .title-40 {
+      margin: 0px;
+    }
+    .fa-star:before {
+      font-size: 32px;
+      color: colors.$yellow-color;
+      margin: 0px 8px;
+    }
+    &-text {
+      &-title,
+      &-description {
+        margin: 0px;
+      }
+      &-description {
+        color: colors.$grey-blue-color-3;
+      }
+    }
+  }
+  &-container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-title {
+      margin: 0px;
+      flex: 1;
+    }
+    &-bar {
+      width: 191px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      &-text {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.rating-bar {
+  width: 155px;
+  height: 8px;
+  background-color: colors.$grey-blue-color-2;
+  border-radius: 56px;
+}
+
+.rating-bar-fill {
+  border-radius: 56px;
+  height: 100%;
+  background-color: colors.$yellow-color;
+}
