@@ -21,7 +21,7 @@ export const Gallery: FC = () => {
       <div className="gallery-container-imgs">
         {images.map((img, index) => (
           <img
-            src={`/imgs/${img}.jpg`}
+            src={`${import.meta.env.BASE_URL}imgs/${img}.jpg`}
             key={index}
             className="gallery-img"
           ></img>

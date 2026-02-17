@@ -21,7 +21,7 @@ export const ServiceItem = ({
         >
           <img
             className="service-title-icon"
-            src={`/icons/${service.icon}.svg`}
+            src={`${import.meta.env.BASE_URL}icons/${service.icon}.svg`}
             alt=""
           />
           {service.title}

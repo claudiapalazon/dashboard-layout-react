@@ -48,7 +48,7 @@ const MenuList: FC<{
             to={item.path}
             onClick={() => setSectionTitle(item.label)}
           >
-            <img src={`/icons/${item.icon}.svg`} alt={item.label} />
+            <img src={`${import.meta.env.BASE_URL}icons/${item.icon}.svg`} alt={item.label} />
             {item.label}
           </Link>
         </li>

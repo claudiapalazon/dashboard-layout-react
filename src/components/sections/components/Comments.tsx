@@ -10,7 +10,7 @@ export const Comments: FC = () => {
       <div className="comments-container">
         <img
           className="comments-container-photo"
-          src="/imgs/claudiapalazon.jpg"
+          src={`${import.meta.env.BASE_URL}imgs/claudiapalazon.jpg`}
           alt=""
         />
         <div className="comments-container-info">
@@ -29,7 +29,7 @@ export const Comments: FC = () => {
           <div className="comments-container-info-second">
             <img
               className="comments-container-photo small-photo"
-              src="/imgs/claudiapalazon.jpg"
+              src={`${import.meta.env.BASE_URL}imgs/claudiapalazon.jpg`}
               alt=""
             />
             <p className="body-medium-12 comments-container-info-second-text">

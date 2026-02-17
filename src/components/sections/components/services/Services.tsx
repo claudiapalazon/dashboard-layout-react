@@ -9,7 +9,7 @@ export const Services: FC = () => {
       <div className="services-surcharge body-regular-12">
         <img
           className="services-surcharge-icon"
-          src="/icons/receipt.svg"
+          src={`${import.meta.env.BASE_URL}icons/receipt.svg`}
           alt="receipt"
         />
         <span>

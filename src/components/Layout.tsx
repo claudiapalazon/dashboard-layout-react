@@ -1,22 +1,26 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { Menu } from "./Menu";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { HeaderSection } from "./sections/components/HeaderSection";
 
 export const LayOutComponent: FC = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const isInitialLoad = useRef(true);
   const [sectionTitle, setSectionTitle] = useState<string>("");
+
   useEffect(() => {
-    if (!sectionTitle) {
-      switch (location.pathname) {
-        case "/emptySection":
-          setSectionTitle("Calendario");
-          break;
-        case "/announcements":
-          setSectionTitle("Anuncios");
-          break;
+    if (pathname.endsWith("announcements")) {
+      setSectionTitle("Anuncios");
+    } else if (pathname.endsWith("emptySection")) {
+      if (isInitialLoad.current) {
+        navigate("/announcements", { replace: true });
+      } else {
+        setSectionTitle("Calendario");
       }
     }
-  }, [location.pathname]);
+    isInitialLoad.current = false;
+  }, [pathname, navigate]);
 
   return (
     <div className="layout">

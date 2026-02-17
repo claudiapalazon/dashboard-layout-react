@@ -7,7 +7,7 @@ export const MenuHeader: FC<{
   return (
     <div className="menu-header">
       <div className="logo-title">
-        <img className="logo" src="/imgs/webel-logo.png" alt="webel-logo" />
+        <img className="logo" src={`${import.meta.env.BASE_URL}imgs/webel-logo.png`} alt="webel-logo" />
         <h1 className="body-semibold-18">Webel</h1>
       </div>
       <Link
@@ -17,7 +17,7 @@ export const MenuHeader: FC<{
       >
         <img
           className="notifications-icon"
-          src="/icons/notifications.svg"
+          src={`${import.meta.env.BASE_URL}icons/notifications.svg`}
           alt=""
         />
         <div className="point"></div>
