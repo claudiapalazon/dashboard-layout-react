@@ -11,6 +11,7 @@ interface MenuItem {
 interface MenuProps {
   sectionTitle: string;
   setSectionTitle: (title: string) => void;
+  onClose?: () => void;
 }
 
 const services: MenuItem[] = [
@@ -34,7 +35,8 @@ const MenuList: FC<{
   items: MenuItem[];
   sectionTitle: string;
   setSectionTitle: (title: string) => void;
-}> = ({ items, sectionTitle, setSectionTitle }) => (
+  onClose?: () => void;
+}> = ({ items, sectionTitle, setSectionTitle, onClose }) => (
   <nav>
     <ul>
       {items.map((item, index) => (
@@ -46,7 +48,10 @@ const MenuList: FC<{
                 : "body-regular-16"
             }
             to={item.path}
-            onClick={() => setSectionTitle(item.label)}
+            onClick={() => {
+              setSectionTitle(item.label);
+              onClose?.();
+            }}
           >
             <img src={`${import.meta.env.BASE_URL}icons/${item.icon}.svg`} alt={item.label} />
             {item.label}
@@ -57,10 +62,10 @@ const MenuList: FC<{
   </nav>
 );
 
-export const Menu: FC<MenuProps> = ({ sectionTitle, setSectionTitle }) => {
+export const Menu: FC<MenuProps> = ({ sectionTitle, setSectionTitle, onClose }) => {
   return (
     <div className="menu-container">
-      <MenuHeader setSectionTitle={setSectionTitle} />
+      <MenuHeader setSectionTitle={setSectionTitle} onClose={onClose} />
       <div className="menu">
         <div className="menu-section">
           <p className="menu-section-title body-regular-16">SERVICIOS</p>
@@ -68,6 +73,7 @@ export const Menu: FC<MenuProps> = ({ sectionTitle, setSectionTitle }) => {
             items={services}
             sectionTitle={sectionTitle}
             setSectionTitle={setSectionTitle}
+            onClose={onClose}
           />
         </div>
         <div className="menu-section margin-top-section">
@@ -76,6 +82,7 @@ export const Menu: FC<MenuProps> = ({ sectionTitle, setSectionTitle }) => {
             items={profile}
             sectionTitle={sectionTitle}
             setSectionTitle={setSectionTitle}
+            onClose={onClose}
           />
         </div>
         <div className="menu-section--flex">
@@ -83,6 +90,7 @@ export const Menu: FC<MenuProps> = ({ sectionTitle, setSectionTitle }) => {
             items={help}
             sectionTitle={sectionTitle}
             setSectionTitle={setSectionTitle}
+            onClose={onClose}
           />
         </div>
       </div>

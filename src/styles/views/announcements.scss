@@ -1,4 +1,5 @@
 @use "../primitives/colors";
+@use "../primitives/breakpoints" as bp;
 
 .announcements {
   padding: 0px 76px 88px 76px;
@@ -12,11 +13,24 @@
   .color-title {
     color: colors.$blue-dark-color-2;
   }
+
+  @include bp.lg {
+    padding: 0 40px 64px 40px;
+  }
+
+  @include bp.md {
+    padding: 0 20px 48px 20px;
+  }
+
+  @include bp.sm {
+    padding: 0 16px 32px 16px;
+  }
 }
 
 .empty-section {
   width: 100%;
   height: 100%;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;

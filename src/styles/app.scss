@@ -10,8 +10,18 @@
   color: colors.$black-color;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   height: 100%;
   margin: 0px;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

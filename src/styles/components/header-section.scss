@@ -1,7 +1,25 @@
+@use "../primitives/breakpoints" as bp;
+
 .header-section {
   width: 100%;
   padding: 21px 76px;
   h3 {
     margin: 0px;
+  }
+
+  @include bp.lg {
+    padding: 21px 40px;
+  }
+
+  @include bp.md {
+    padding: 16px 20px 16px 72px; // espacio para el botón menú
+  }
+
+  @include bp.sm {
+    padding: 12px 16px 12px 60px;
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 }

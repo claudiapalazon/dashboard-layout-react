@@ -8,6 +8,7 @@ export const LayOutComponent: FC = () => {
   const navigate = useNavigate();
   const isInitialLoad = useRef(true);
   const [sectionTitle, setSectionTitle] = useState<string>("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (pathname.endsWith("announcements")) {
@@ -23,9 +24,31 @@ export const LayOutComponent: FC = () => {
   }, [pathname, navigate]);
 
   return (
-    <div className="layout">
+    <div className={`layout ${menuOpen ? "layout--menu-open" : ""}`}>
+      <button
+        type="button"
+        className="layout-menu-toggle"
+        onClick={() => setMenuOpen(true)}
+        aria-label="Abrir menú"
+      >
+        <span className="layout-menu-toggle-bar" />
+        <span className="layout-menu-toggle-bar" />
+        <span className="layout-menu-toggle-bar" />
+      </button>
+      <div
+        className="layout-overlay"
+        role="button"
+        tabIndex={0}
+        onClick={() => setMenuOpen(false)}
+        onKeyDown={(e) => e.key === "Escape" && setMenuOpen(false)}
+        aria-label="Cerrar menú"
+      />
       <div className="layout-menu">
-        <Menu sectionTitle={sectionTitle} setSectionTitle={setSectionTitle} />
+        <Menu
+          sectionTitle={sectionTitle}
+          setSectionTitle={setSectionTitle}
+          onClose={() => setMenuOpen(false)}
+        />
       </div>
       <div className="layout-section">
         <HeaderSection title={sectionTitle} />
